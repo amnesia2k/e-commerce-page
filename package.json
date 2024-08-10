@@ -1,0 +1,14 @@
+{
+  "name": "e-commerce-final-task",
+  "version": "1.0.0",
+  "description": "This is my KodeCamp final project, it is an e-commerce website with full functionality and API integration",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --no-source-map --watch scss:css"
+  },
+  "author": "amnesia2k",
+  "license": "MIT",
+  "dependencies": {
+    "sass": "^1.77.8"
+  }
+}
