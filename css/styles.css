@@ -141,11 +141,11 @@ a {
 .btn-1 {
   background: linear-gradient(135deg, #eb959c, #f8c7cb);
   border: none;
-  color: #4a4a4a; /* Text color */
-  padding: 10px 20px; /* Button padding */
-  font-size: 1rem; /* Font size */
-  font-weight: 900; /* Font weight */
-  border-radius: 10px; /* Rounded corners */
+  color: #4a4a4a;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 900;
+  border-radius: 10px;
   transition: background 0.5s ease-in-out;
 }
 
@@ -155,7 +155,7 @@ a {
 }
 
 .btn-1:hover {
-  background: linear-gradient(135deg, #f8c7cb, #eb959c); /* Hover effect */
+  background: linear-gradient(135deg, #f8c7cb, #eb959c);
 }
 
 .btn-2:hover {
