@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Cart array to store items
   let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
-  let cartCount = cart.length;
 
-  // Initialize cart count from local storage
-  cartCountElement.textContent = cartCount;
+  // Initialize cart count and cart modal from local storage
+  updateCartCount();
+  updateCartModal();
 
   // Function to update the cart count
   function updateCartCount() {
-    cartCount = cart.length;
+    let cartCount = cart.length;
     cartCountElement.textContent = cartCount;
     localStorage.setItem("cartItems", JSON.stringify(cart));
   }
@@ -32,10 +32,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (cart.length > 0) {
       cart.forEach((item) => {
         cartItemsContainer.innerHTML += `
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              ${item.title}
-              <span class="fw-bold">$${item.price}</span>
-            </li>`;
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            <img src="${item.image}" alt="${item.title}" class="img-thumbnail me-3" style="width: 50px; height: 50px; object-fit: cover;">
+            ${item.title}
+          </div>
+          <span class="fw-bold">$${item.price}</span>
+        </li>`;
       });
 
       const total = cart.reduce((sum, item) => sum + item.price, 0).toFixed(2);
@@ -160,7 +163,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initial fetch calls
   fetchProducts("https://fakestoreapi.com/products");
-  fetchCategories();
 
   // Initial cart update
   updateCartModal();

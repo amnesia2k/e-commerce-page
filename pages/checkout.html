@@ -11,32 +11,52 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../css/checkout.css" />
-    <!-- <script src="../js/shop.js" defer></script> -->
+    <script src="../js/checkout.js" defer></script>
   </head>
   <body>
     <div class="checkout-container">
       <form class="checkout-form">
         <h2 class="mb-4">Proceed to Checkout</h2>
 
-        <!-- Name -->
+        <!-- Order Summary -->
+        <h4 class="mt-4">Order Summary</h4>
+        <ul id="orderSummary" class="list-group mb-4">
+          <!-- Dynamically generated via JavaScript -->
+        </ul>
+        <p class="text-end fw-bold">
+          Total: $<span id="orderTotal">0.00</span>
+        </p>
+
+        <!-- Billing Information -->
+        <h4 class="mt-4">Billing Information</h4>
         <div class="mb-3">
           <label for="fullName" class="form-label">Full Name</label>
           <input
             type="text"
             class="form-control"
             id="fullName"
-            placeholder="Enter your full name" required
+            placeholder="Enter your full name"
+            required
           />
         </div>
-
-        <!-- Email -->
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
           <input
             type="email"
             class="form-control"
             id="email"
-            placeholder="Enter your email" required
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="number" class="form-label">Phone Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="phoneNumber"
+            placeholder="Enter your phone number"
+            required
           />
         </div>
 
@@ -48,7 +68,8 @@
             type="text"
             class="form-control"
             id="street"
-            placeholder="1234 Main St" required
+            placeholder="1234 Main St"
+            required
           />
         </div>
         <div class="row">
@@ -58,7 +79,8 @@
               type="text"
               class="form-control"
               id="city"
-              placeholder="City" required
+              placeholder="City"
+              required
             />
           </div>
           <div class="col-md-6 mb-3">
@@ -67,7 +89,8 @@
               type="text"
               class="form-control"
               id="state"
-              placeholder="State/Province" required
+              placeholder="State/Province"
+              required
             />
           </div>
         </div>
@@ -78,7 +101,8 @@
               type="text"
               class="form-control"
               id="zip"
-              placeholder="Zip/Postal Code" required
+              placeholder="Zip/Postal Code"
+              required
             />
           </div>
           <div class="col-md-6 mb-3">
@@ -87,20 +111,91 @@
               type="text"
               class="form-control"
               id="country"
-              placeholder="Country" required
+              placeholder="Country"
+              required
             />
           </div>
         </div>
 
+        <!-- Shipping Information (optional) -->
+        <div class="form-check mb-4">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="differentShipping"
+          />
+          <label class="form-check-label" for="differentShipping"
+            >Shipping address different from billing address</label
+          >
+        </div>
+
+        <div id="shippingInfo" style="display: none">
+          <h4 class="mt-4">Shipping Information</h4>
+          <div class="mb-3">
+            <label for="shippingStreet" class="form-label">Street</label>
+            <input
+              type="text"
+              class="form-control"
+              id="shippingStreet"
+              placeholder="1234 Main St"
+            />
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="shippingCity" class="form-label">City</label>
+              <input
+                type="text"
+                class="form-control"
+                id="shippingCity"
+                placeholder="City"
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="shippingState" class="form-label"
+                >State/Province</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="shippingState"
+                placeholder="State/Province"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="shippingZip" class="form-label"
+                >Zip/Postal Code</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="shippingZip"
+                placeholder="Zip/Postal Code"
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="shippingCountry" class="form-label">Country</label>
+              <input
+                type="text"
+                class="form-control"
+                id="shippingCountry"
+                placeholder="Country"
+              />
+            </div>
+          </div>
+        </div>
+
         <!-- Card Details -->
-        <h4 class="mt-4">Card Details</h4>
+        <h4 class="mt-4">Payment Information</h4>
         <div class="mb-3">
           <label for="cardNumber" class="form-label">Card Number</label>
           <input
             type="text"
             class="form-control"
             id="cardNumber"
-            placeholder="Card Number" required
+            placeholder="Card Number"
+            required
           />
         </div>
         <div class="row">
@@ -110,7 +205,8 @@
               type="text"
               class="form-control"
               id="expiryDate"
-              placeholder="MM/YY" required
+              placeholder="MM/YY"
+              required
             />
           </div>
           <div class="col-md-6 mb-3">
@@ -119,7 +215,8 @@
               type="text"
               class="form-control"
               id="cvv"
-              placeholder="CVV" required
+              placeholder="CVV"
+              required
             />
           </div>
         </div>

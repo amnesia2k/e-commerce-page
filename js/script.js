@@ -33,10 +33,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (cart.length > 0) {
       cart.forEach((item) => {
         cartItemsContainer.innerHTML += `
-          <li class="list-group-item d-flex justify-content-between align-items-center">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            <img src="${item.image}" alt="${item.title}" class="img-thumbnail me-3" style="width: 50px; height: 50px; object-fit: cover;">
             ${item.title}
-            <span class="fw-bold">$${item.price}</span>
-          </li>`;
+          </div>
+          <span class="fw-bold">$${item.price}</span>
+        </li>`;
       });
 
       const total = cart.reduce((sum, item) => sum + item.price, 0).toFixed(2);
@@ -94,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <h2 class="card-title fs-5 fw-bolder mb-2">${product.title}</h2>
                 <h4 class="card-category text-uppercase fs-6 fw-medium mb-3">${product.category}</h4>
                 <p class="card-text fs-5 pb-2 fw-bold">$${product.price}</p>
-                <a href="#!" data-product-id="${product.id}" class="btn btn-primary btn-1 add-to-cart-btn fs-6">
+                <a href="#!" data-product-id="${product.id}" class="btn btn-primary btn-1 add-to-cart-btn fs-6" id="modalAddToCartBtn">
                   <i class="bi bi-cart3 fs-6 fw-bold pe-2"></i>Add to Cart
                 </a>
               </div>

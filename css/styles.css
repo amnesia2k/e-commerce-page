@@ -217,6 +217,10 @@ a {
   font-weight: 500 !important;
 }
 
+.bi-whatsapp:hover {
+  color: #10d81a;
+}
+
 .bi-instagram:hover {
   color: #f565f5;
 }
