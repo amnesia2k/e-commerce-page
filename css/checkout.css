@@ -1,1 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  font-family: "Work Sans", sans-serif;
+}
 
+.checkout-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.checkout-form {
+  width: 100%;
+  max-width: 800px;
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 992px) {
+  .checkout-form {
+    padding: 50px;
+  }
+}

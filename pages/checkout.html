@@ -10,8 +10,131 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/checkout.css" />
     <!-- <script src="../js/shop.js" defer></script> -->
   </head>
-  <body></body>
+  <body>
+    <div class="checkout-container">
+      <form class="checkout-form">
+        <h2 class="mb-4">Proceed to Checkout</h2>
+
+        <!-- Name -->
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="fullName"
+            placeholder="Enter your full name" required
+          />
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Enter your email" required
+          />
+        </div>
+
+        <!-- Billing Address -->
+        <h4 class="mt-4">Billing Address</h4>
+        <div class="mb-3">
+          <label for="street" class="form-label">Street</label>
+          <input
+            type="text"
+            class="form-control"
+            id="street"
+            placeholder="1234 Main St" required
+          />
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="city" class="form-label">City</label>
+            <input
+              type="text"
+              class="form-control"
+              id="city"
+              placeholder="City" required
+            />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="state" class="form-label">State/Province</label>
+            <input
+              type="text"
+              class="form-control"
+              id="state"
+              placeholder="State/Province" required
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="zip" class="form-label">Zip/Postal Code</label>
+            <input
+              type="text"
+              class="form-control"
+              id="zip"
+              placeholder="Zip/Postal Code" required
+            />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input
+              type="text"
+              class="form-control"
+              id="country"
+              placeholder="Country" required
+            />
+          </div>
+        </div>
+
+        <!-- Card Details -->
+        <h4 class="mt-4">Card Details</h4>
+        <div class="mb-3">
+          <label for="cardNumber" class="form-label">Card Number</label>
+          <input
+            type="text"
+            class="form-control"
+            id="cardNumber"
+            placeholder="Card Number" required
+          />
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="expiryDate" class="form-label">Expiry Date</label>
+            <input
+              type="text"
+              class="form-control"
+              id="expiryDate"
+              placeholder="MM/YY" required
+            />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="cvv" class="form-label">CVV</label>
+            <input
+              type="text"
+              class="form-control"
+              id="cvv"
+              placeholder="CVV" required
+            />
+          </div>
+        </div>
+
+        <!-- Terms and Conditions -->
+        <div class="form-check mb-4">
+          <input type="checkbox" class="form-check-input" id="terms" required />
+          <label class="form-check-label" for="terms"
+            >I agree to the Terms & Conditions</label
+          >
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary w-100">Place Order</button>
+      </form>
+    </div>
+  </body>
 </html>
