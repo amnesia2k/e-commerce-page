@@ -26,6 +26,10 @@ header {
   background: #64ddf0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .navbar {
   width: 100%;
   padding: 22px 0;
@@ -33,7 +37,7 @@ header {
 }
 
 .navbar.scrolled {
-  background-color: rgba(0, 0, 0, 0.7); /* Dark transparent background */
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .navbar-toggler {
@@ -106,6 +110,17 @@ header {
   background: #64ddf0;
 }
 
+.shop-hero {
+  width: 100%;
+  padding-top: 120px;
+}
+
+.hero2 {
+  width: 100%;
+  padding: 0 120px;
+  background: #64ddf0;
+}
+
 .hero-title {
   padding-top: 50px;
   font-size: 3rem;
@@ -128,14 +143,23 @@ header {
   border: none;
   color: #4a4a4a; /* Text color */
   padding: 10px 20px; /* Button padding */
-  font-size: 1.5rem; /* Font size */
+  font-size: 1rem; /* Font size */
   font-weight: 900; /* Font weight */
   border-radius: 10px; /* Rounded corners */
-  transition: background 0.5s ease-in-out; /* Smooth transition */
+  transition: background 0.5s ease-in-out;
+}
+
+.btn-2 {
+  border: 1px solid #eb959c !important;
+  color: #333333;
 }
 
 .btn-1:hover {
   background: linear-gradient(135deg, #f8c7cb, #eb959c); /* Hover effect */
+}
+
+.btn-2:hover {
+  background: #eb959c !important;
 }
 
 .featured-header {
@@ -163,6 +187,58 @@ header {
 
 .card-text {
   font-size: 15px;
+}
+
+.modal-header {
+  border-bottom: none !important;
+}
+
+.modal-footer {
+  border-top: none !important;
+}
+
+.btt-btn {
+  position: fixed !important;
+  padding: 0.25rem !important;
+  margin-bottom: 1rem !important;
+  margin-right: 1rem !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: #706c6c;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btt-btn:hover {
+  background: #4a4a4a;
+}
+
+.bi::before {
+  font-weight: 500 !important;
+}
+
+.bi-instagram:hover {
+  color: #f565f5;
+}
+
+.bi-facebook:hover {
+  color: #2121fc;
+}
+
+.bi-linkedin:hover {
+  color: #2179fc;
+}
+
+.bi-twitter-x:hover {
+  color: rgba(46, 158, 202, 0.7333333333);
+}
+
+.social-links {
+  color: #f3f3f3;
+}
+
+.social-links::before {
+  font-weight: 500 !important;
 }
 
 @media (max-width: 1120px) {
@@ -212,5 +288,11 @@ header {
   }
   .product-header {
     font-size: 2rem !important;
+  }
+}
+@media (max-width: 360px) {
+  .product-header {
+    font-size: 1.5rem !important;
+    font-weight: 700;
   }
 }

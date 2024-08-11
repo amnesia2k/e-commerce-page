@@ -13,7 +13,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/styles.css" />
-    <!-- <script src="js/script.js" defer></script> -->
+    <script src="js/script.js" defer></script>
   </head>
   <body>
     <!-- Navbar section starts -->
@@ -35,7 +35,11 @@
               <a href="#" class="nav-link text-white fs-6 fw-semibold">Home</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link text-white fs-6 fw-semibold">Shop</a>
+              <a
+                href="pages/shop.html"
+                class="nav-link text-white fs-6 fw-semibold"
+                >Shop</a
+              >
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link text-white fs-6 fw-semibold"
@@ -50,9 +54,13 @@
           </ul>
 
           <div class="d-flex nav-icons">
-            <a href="" class="me-4"><i class="bi bi-search text-white"></i></a>
-            <a href="cart.html" class="cart-icon"
-              ><i class="bi bi-cart3 text-white"></i
+            <a href="" class="me-4"><i class="bi bi-search text-white fs-5"></i></a>
+            <a
+              href=""
+              class="cart-icon"
+              data-bs-target="#cartModal"
+              data-bs-toggle="modal"
+              ><i class="bi bi-cart3 text-white fs-5"></i
               ><span class="cart-num">0</span></a
             >
           </div>
@@ -62,7 +70,7 @@
     <!-- Navbar section ends -->
 
     <!-- Hero section starts -->
-    <section class="hero">
+    <section class="hero" id="heroSection">
       <div class="container">
         <div class="row">
           <div
@@ -72,9 +80,11 @@
               Discover our new Products Collections
             </div>
             <p class="hero-subtitle mb-3">
-              Explore the finest selection of products curated just for you. Elevate your style, enhance your home, and discover the latest trends with our new collections.
+              Explore the finest selection of products curated just for you.
+              Elevate your style, enhance your home, and discover the latest
+              trends with our new collections.
             </p>
-            <a href="#" class="btn btn-primary btn-1">Shop Now</a>
+            <a href="pages/shop.html" class="btn btn-primary btn-1">Shop Now</a>
           </div>
           <div class="col-md-6 text-center">
             <img src="assets/hero.png" alt="" class="img-fluid hero-img" />
@@ -84,170 +94,178 @@
     </section>
     <!-- Hero section ends -->
 
-    <!-- Featured Section starts -->
-    <!-- <section class="featured-section py-5">
-      <div class="container">
-        <h2 class="text-center mb-4 featured-header">Featured Categories</h2>
-        <div class="row text-center">
-          <div class="col-md-4 col-sm-4 mb-4">
-            <div class="card h-100">
-              <img
-                src="assets/products/shirt.jpg"
-                alt="Shirts"
-                class="img-fluid img-top"
-                style="height: 20rem; object-fit: cover"
-              />
-              <div class="card-body">
-                <p class="card-text">Shirts</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4 mb-4">
-            <div class="card h-100">
-              <img
-                src="assets/products/t-shirt2.jpg"
-                alt="T-Shirts"
-                class="img-fluid img-top"
-                style="height: 20rem; object-fit: cover"
-              />
-              <div class="card-body">
-                <p class="card-text">T-Shirts</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4 mb-4">
-            <div class="card h-100">
-              <img
-                src="assets/products/cooperate.jpg"
-                alt="Cooperate"
-                class="img-fluid img-top"
-                style="height: 20rem; object-fit: cover"
-              />
-              <div class="card-body">
-                <p class="card-text">Cooperate</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4 mb-4">
-            <div class="card h-100">
-              <img
-                src="assets/products/sneaker.jpg"
-                alt="Sneakers"
-                class="img-fluid img-top"
-                style="height: 20rem; object-fit: cover"
-              />
-              <div class="card-body">
-                <p class="card-text">Sneakers</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4 mb-4">
-            <div class="card h-100">
-              <img
-                src="assets/products/undies2.jpg"
-                alt="Underwears"
-                class="img-fluid img-top"
-                style="height: 20rem; object-fit: cover"
-              />
-              <div class="card-body">
-                <p class="card-text">Underwears</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4 mb-4">
-            <div class="card h-100">
-              <img
-                src="assets/products/bikini.jpg"
-                alt="Bikini"
-                class="img-fluid img-top"
-                style="height: 20rem; object-fit: cover"
-              />
-              <div class="card-body">
-                <p class="card-text">Bikini</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!-- Featured Section ends -->
-
     <!-- Categories Section -->
     <section class="categories-section py-5">
       <div class="container">
-        <h2 class="text-center mb-4">Shop by Categories</h2>
+        <h2 class="text-center mb-4 product-header">Shop by Categories</h2>
         <div class="row categories text-center">
           <!-- Categories will be dynamically inserted here -->
         </div>
       </div>
-    </section>
-
-    <!-- Products Modal -->
-    <div
-      class="modal fade"
-      id="productsModal"
-      tabindex="-1"
-      aria-labelledby="productsModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="productsModalLabel">
-              Category Products
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div class="row products-modal-body">
-              <!-- Products will be dynamically inserted here -->
+      <!-- Products Modal -->
+      <div
+        class="modal fade"
+        id="productsModal"
+        tabindex="-1"
+        aria-labelledby="productsModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="productsModalLabel">
+                Category Products
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
+            <div class="modal-body">
+              <div class="row products-modal-body">
+                <!-- Products will be dynamically inserted here -->
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <!-- Products Modal ends-->
+    </section>
     <!-- Caregories Section ends -->
 
     <!-- Product Section starts -->
     <section class="product-section py-5">
       <div class="container">
-        <h2 class="text-center mb-4 product-header">Our Products</h2>
+        <h2 class="text-center mb-4 product-header">Featured Products</h2>
         <div class="row text-center product-cont">
           <div class="row products">
             <!-- Products will be dynamically inserted here -->
           </div>
         </div>
       </div>
+      <!-- Product Modal -->
+      <div
+        class="modal fade"
+        id="productModal"
+        tabindex="-1"
+        aria-labelledby="productModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="productModalLabel">
+                Product Details
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- Product details will be populated here -->
+              <img
+                id="modalProductImage"
+                class="img-fluid mb-3"
+                alt="Product Image"
+              />
+              <h5 id="modalProductTitle"></h5>
+              <p class="text-uppercase" id="modalProductCategory"></p>
+              <p id="modalProductDescription"></p>
+              <p class="fs-5 fw-bold">$<span id="modalProductPrice"></span></p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-1 btn-primary add-to-cart-btn"
+                id="modalAddToCartBtn"
+              >
+                <i class="bi bi-cart3 fs-6 fw-bold pe-2"></i>Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Product Modal ends -->
     </section>
-
     <!-- Product Section ends -->
 
-    <!-- Product Modal -->
+    <!-- Back to Top Button -->
+    <a
+      href="#top"
+      class="btn btn-success btn-sm mb-3 btt-btn position-fixed bottom-0 end-0 p-1 me-3"
+    >
+      <i class="bi bi-arrow-up fs-4 fw-bolder"></i>
+    </a>
+    <!-- Back to Top Button ends -->
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-sm-6">
+            <h5 class="fs-1 fw-bold">About Us</h5>
+            <p>
+              Learn more about our journey and values. We are committed to
+              bringing you the best products and services.
+            </p>
+          </div>
+          <!-- Footer Links -->
+          <div class="col-md-4">
+            <h5 class="fs-1 fw-bold">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Home</a></li>
+              <li><a href="pages/shop.html" class="text-white">Shop</a></li>
+              <li><a href="#" class="text-white">About Us</a></li>
+              <li><a href="#" class="text-white">Contact Us</a></li>
+            </ul>
+          </div>
+          <!-- Social Links -->
+          <div class="col-md-4">
+            <h5 class="fs-1 fw-bold">Follow Us</h5>
+            <a
+              href="https://www.facebook.com/olatilewa.olatoye"
+              target="_blank"
+              class="me-3"
+              ><i class="bi bi-facebook fs-3 social-links"></i
+            ></a>
+            <a href="https://x.com/amnesia_codm" target="_blank" class="me-3"
+              ><i class="bi bi-twitter-x fs-3 social-links"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/xixiv.manuel/"
+              target="_blank"
+              class="me-3"
+              ><i class="bi bi-instagram fs-3 social-links"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/olatilewaolatoye/"
+              target="_blank"
+              class="me-3"
+              ><i class="bi bi-linkedin fs-3 social-links"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer Section ends -->
+
+    <!-- Cart Modal -->
     <div
       class="modal fade"
-      id="productModal"
+      id="cartModal"
       tabindex="-1"
-      aria-labelledby="productModalLabel"
+      aria-labelledby="cartModalLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="productModalLabel">Product Details</h5>
+            <h5 class="modal-title" id="cartModalLabel">Your Cart</h5>
             <button
               type="button"
               class="btn-close"
@@ -256,36 +274,31 @@
             ></button>
           </div>
           <div class="modal-body">
-            <!-- Product details will be populated here -->
-            <img
-              id="modalProductImage"
-              class="img-fluid mb-3"
-              alt="Product Image"
-            />
-            <h5 id="modalProductTitle"></h5>
-            <p id="modalProductCategory"></p>
-            <p id="modalProductDescription"></p>
-            <p class="fs-5 fw-bold">$<span id="modalProductPrice"></span></p>
+            <!-- Cart items will be displayed here -->
+            <ul class="list-group cart-items cart-list">
+              <!-- Dynamic content goes here -->
+            </ul>
+            <div class="mt-3 text-end">
+              <strong>Total: $<span id="cartTotal">0.00</span></strong>
+            </div>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
+            <button class="btn btn-danger" id="clearCartBtn">
+              <i class="bi bi-trash text-white"></i> Delete All
             </button>
-            <button
-              type="button"
-              class="btn btn-primary add-to-cart-btn"
-              id="modalAddToCartBtn"
+            <a
+              href="./pages/checkout.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><button type="button" id="checkoutBtn" class="btn btn-primary">
+                Proceed to Checkout
+              </button></a
             >
-              Add to Cart
-            </button>
           </div>
         </div>
       </div>
     </div>
+    <!-- Cart Modal ends -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -297,6 +310,5 @@
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"
     ></script>
-    <script src="js/script.js"></script>
   </body>
 </html>
